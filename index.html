@@ -32,143 +32,149 @@
 
     /* Header */
     header {
-      background-color: #1a1a1a;
+      background-color: #181818;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 15px 30px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.7);
+      padding: 15px 40px;
+      box-shadow: 0 6px 12px rgba(0, 128, 0, 0.5);
       position: sticky;
       top: 0;
       z-index: 100;
+      border-bottom: 3px solid #4caf50;
     }
     .logo {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 16px;
     }
     .logo img {
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
-      box-shadow: 0 2px 8px rgba(0, 128, 0, 0.7);
+      box-shadow: 0 3px 10px rgba(72, 187, 120, 0.8);
       object-fit: cover;
+      border: 2.5px solid #4caf50;
+      transition: transform 0.3s ease;
+    }
+    .logo img:hover {
+      transform: rotate(15deg) scale(1.1);
     }
     .logo h1 {
       font-weight: 700;
-      font-size: 1.8rem;
-      letter-spacing: 1.3px;
+      font-size: 2rem;
+      letter-spacing: 1.4px;
       color: #90ee90;
+      user-select: none;
     }
 
-    /* Tagline */
     .tagline {
       font-weight: 400;
-      color: #bbb;
-      font-size: 1rem;
-      max-width: 250px;
-      text-align: right;
+      color: #a0a0a0;
+      font-size: 1.1rem;
       user-select: none;
+      max-width: 300px;
+      text-align: right;
     }
 
     main {
       max-width: 1000px;
-      margin: 50px auto 60px;
-      padding: 0 20px;
+      margin: 60px auto 80px;
+      padding: 0 24px;
     }
 
     /* Hizmetler grid */
     .services {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 28px;
+      gap: 30px;
       margin-bottom: 60px;
     }
     .service-card {
-      background: #3a3a3a;
-      border-radius: 15px;
-      padding: 24px;
-      box-shadow: 0 6px 18px rgba(0, 128, 0, 0.3);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      background: #3b3b3b;
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 8px 24px rgba(0, 128, 0, 0.35);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: default;
     }
     .service-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 30px rgba(0, 128, 0, 0.6);
+      transform: translateY(-10px);
+      box-shadow: 0 16px 40px rgba(0, 160, 0, 0.75);
     }
     .service-card h2 {
       font-weight: 700;
-      color: #a6f0a6;
-      font-size: 1.6rem;
-      margin-bottom: 14px;
+      color: #a5f2a5;
+      font-size: 1.8rem;
+      margin-bottom: 16px;
     }
     .service-card p {
       font-weight: 400;
-      color: #d0d0d0;
-      font-size: 1rem;
-      line-height: 1.4;
+      color: #d6d6d6;
+      font-size: 1.05rem;
+      line-height: 1.5;
     }
 
     /* Call button */
     .call-button {
-      display: inline-block;
-      background-color: #4CAF50;
+      display: block;
+      background-color: #4caf50;
       color: #fff;
       font-weight: 700;
-      padding: 18px 48px;
-      font-size: 1.3rem;
-      border-radius: 35px;
-      box-shadow: 0 6px 20px rgba(0,128,0,0.6);
+      padding: 20px 52px;
+      font-size: 1.4rem;
+      border-radius: 40px;
+      box-shadow: 0 8px 26px rgba(0, 150, 0, 0.8);
       text-align: center;
-      margin: 0 auto 80px;
+      margin: 0 auto 90px;
       cursor: pointer;
       user-select: none;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-      display: block;
+      transition: background-color 0.35s ease, box-shadow 0.35s ease;
       max-width: 320px;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
     }
     .call-button:hover {
-      background-color: #2e7d32;
-      box-shadow: 0 10px 28px rgba(0,100,0,0.8);
+      background-color: #388e3c;
+      box-shadow: 0 12px 36px rgba(0, 120, 0, 1);
     }
 
     /* Gallery */
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 18px;
-      margin-bottom: 60px;
+      gap: 22px;
+      margin-bottom: 80px;
     }
     .gallery img {
       width: 100%;
-      height: 180px;
-      border-radius: 18px;
+      height: 190px;
+      border-radius: 20px;
       object-fit: cover;
-      box-shadow: 0 5px 18px rgba(0,128,0,0.4);
+      box-shadow: 0 6px 22px rgba(0, 130, 0, 0.5);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
     }
     .gallery img:hover {
-      transform: scale(1.08);
-      box-shadow: 0 10px 30px rgba(0,200,0,0.8);
+      transform: scale(1.12);
+      box-shadow: 0 14px 44px rgba(0, 220, 0, 0.9);
     }
 
     /* Footer */
     footer {
-      background-color: #1a1a1a;
+      background-color: #181818;
       text-align: center;
-      padding: 18px 12px;
+      padding: 22px 14px;
       color: #888;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       box-shadow: inset 0 1px 0 #3a3a3a;
       user-select: none;
     }
     footer .social-links {
-      margin-top: 8px;
+      margin-top: 10px;
     }
     footer .social-links a {
-      margin: 0 14px;
+      margin: 0 16px;
       color: #888;
       font-weight: 600;
       transition: color 0.3s ease;
@@ -181,8 +187,8 @@
     @media (max-width: 640px) {
       header {
         flex-direction: column;
-        gap: 6px;
-        padding: 15px 20px;
+        gap: 10px;
+        padding: 20px 24px;
       }
       .tagline {
         text-align: center;
@@ -190,8 +196,8 @@
       }
       .call-button {
         max-width: 100%;
-        padding: 16px 30px;
-        font-size: 1.1rem;
+        padding: 18px 36px;
+        font-size: 1.2rem;
       }
       .gallery img {
         height: 140px;
@@ -234,4 +240,6 @@
 
   <section class="gallery" aria-label="Instagram Görselleri">
     <img src="https://instagram.fist4-1.fna.fbcdn.net/v/t51.2885-15/e35/128063886_106843281237944_5166935127858365698_n.jpg?_nc_ht=instagram.fist4-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=6xqX3WMrIkgAX8dQyQh&edm=AP_V10EBAAAA&ccb=7-5&ig_cache_key=MjI2MDE3Mjk1MTQxNjIxOTQwNg%3D%3D.2-ccb7-5&oh=67743c465214fc5a9678b5c737326a6d&oe=64E4483A&_nc_sid=4f375e" alt="Sigorta Instagram Görsel 1" />
-    <img src="https://instagram.fist4-1.fna.fbcdn.net/v/t51.2885-15/e35/136358896_168989055029641_3812621091348015364_n.jpg?_nc_ht=instagram.fist4-1.fna.fbcdn.net&_nc_cat=107&_nc_ohc=lTlhkLfKvO4AX_12sLC&edm=AP_V10EBAAAA&ccb=7-5&ig_cache_key=MjM0ODQ2NjM1NDA4MjQ5NzgxNA%3D%
+    <img src="https://instagram.fist4-1.fna.fbcdn.net/v/t51.2885-15/e35/136358896_168989055029641_3812621091348015364_n.jpg?_nc_ht=instagram.fist4-1.fna.fbcdn.net&_nc_cat=107&_nc_ohc=lTlhkLfKvO4AX_12sLC&edm=AP_V10EBAAAA&ccb=7-5&ig_cache_key=MjM0ODQ2NjM1NDA4MjQ5NzgxNA%3D%3D.2-ccb7-5&oh=3e3ac56b43b9ae390de6b19326312ed6&oe=64E49D5A&_nc_sid=4f375e" alt="Sigorta Instagram Görsel 2" />
+    <img src="https://instagram.fist4-1.fna.fbcdn.net/v/t51.2885-15/e35/135370033_129204829692165_8406173921564326891_n.jpg?_nc_ht=instagram.fist4-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=cLwju6DKrY8AX-Kztdh&edm=AP_V10EBAAAA&ccb=7-5&ig_cache_key=MjMzOTQ0Mzg4Mjg5MDA3MDYwNA%3D%3D.2-ccb7-5&oh=
+
