@@ -4,105 +4,234 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Emir Çeken Sigorta</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Reset */
+    * {
       margin: 0; padding: 0;
-      background-color: #2e2e2e;
-      color: white;
+      box-sizing: border-box;
     }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #2e2e2e;
+      color: #f5f5f5;
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Header */
     header {
       background-color: #1a1a1a;
-      color: white;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 30px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.7);
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .logo img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0, 128, 0, 0.7);
+      object-fit: cover;
+    }
+    .logo h1 {
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: 1.3px;
+      color: #90ee90;
+    }
+
+    /* Tagline */
+    .tagline {
+      font-weight: 400;
+      color: #bbb;
+      font-size: 1rem;
+      max-width: 250px;
+      text-align: right;
+      user-select: none;
+    }
+
     main {
-      max-width: 800px;
-      margin: 40px auto;
+      max-width: 1000px;
+      margin: 50px auto 60px;
       padding: 0 20px;
     }
-    h1 {
-      margin-bottom: 10px;
+
+    /* Hizmetler grid */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+      margin-bottom: 60px;
+    }
+    .service-card {
+      background: #3a3a3a;
+      border-radius: 15px;
+      padding: 24px;
+      box-shadow: 0 6px 18px rgba(0, 128, 0, 0.3);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      cursor: default;
+    }
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0, 128, 0, 0.6);
+    }
+    .service-card h2 {
       font-weight: 700;
+      color: #a6f0a6;
+      font-size: 1.6rem;
+      margin-bottom: 14px;
     }
-    p {
-      line-height: 1.6;
-      margin-bottom: 25px;
+    .service-card p {
+      font-weight: 400;
+      color: #d0d0d0;
+      font-size: 1rem;
+      line-height: 1.4;
     }
-    .service {
-      background-color: #333;
-      border-radius: 8px;
-      padding: 15px;
-      margin-bottom: 20px;
-    }
+
+    /* Call button */
     .call-button {
       display: inline-block;
-      background-color: #008000;
-      color: white;
-      padding: 15px 30px;
-      text-decoration: none;
-      font-weight: 600;
-      border-radius: 6px;
-      transition: background-color 0.3s ease;
+      background-color: #4CAF50;
+      color: #fff;
+      font-weight: 700;
+      padding: 18px 48px;
+      font-size: 1.3rem;
+      border-radius: 35px;
+      box-shadow: 0 6px 20px rgba(0,128,0,0.6);
+      text-align: center;
+      margin: 0 auto 80px;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      display: block;
+      max-width: 320px;
+      letter-spacing: 0.05em;
     }
     .call-button:hover {
-      background-color: #005700;
+      background-color: #2e7d32;
+      box-shadow: 0 10px 28px rgba(0,100,0,0.8);
     }
+
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 18px;
+      margin-bottom: 60px;
+    }
+    .gallery img {
+      width: 100%;
+      height: 180px;
+      border-radius: 18px;
+      object-fit: cover;
+      box-shadow: 0 5px 18px rgba(0,128,0,0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .gallery img:hover {
+      transform: scale(1.08);
+      box-shadow: 0 10px 30px rgba(0,200,0,0.8);
+    }
+
+    /* Footer */
     footer {
+      background-color: #1a1a1a;
       text-align: center;
-      margin: 60px 0 20px;
-      color: #bbb;
-      font-size: 0.9em;
+      padding: 18px 12px;
+      color: #888;
+      font-size: 0.9rem;
+      box-shadow: inset 0 1px 0 #3a3a3a;
+      user-select: none;
     }
-    .social-links a {
-      color: #bbb;
-      margin: 0 10px;
-      text-decoration: none;
+    footer .social-links {
+      margin-top: 8px;
     }
-    .social-links a:hover {
-      color: white;
+    footer .social-links a {
+      margin: 0 14px;
+      color: #888;
+      font-weight: 600;
+      transition: color 0.3s ease;
     }
-    @media (max-width: 600px) {
-      main {
-        margin: 20px 10px;
+    footer .social-links a:hover {
+      color: #90ee90;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      header {
+        flex-direction: column;
+        gap: 6px;
+        padding: 15px 20px;
+      }
+      .tagline {
+        text-align: center;
+        max-width: 100%;
+      }
+      .call-button {
+        max-width: 100%;
+        padding: 16px 30px;
+        font-size: 1.1rem;
+      }
+      .gallery img {
+        height: 140px;
       }
     }
   </style>
 </head>
 <body>
-  <header>
+
+<header>
+  <div class="logo">
+    <img src="https://instagram.fist4-1.fna.fbcdn.net/v/t51.2885-19/s150x150/216350016_4482099105248399_4795418026230151782_n.jpg?_nc_ht=instagram.fist4-1.fna.fbcdn.net&_nc_cat=106&_nc_ohc=FqDX0Q6r6bcAX_R2yzQ&edm=AP_V10EBAAAA&ccb=7-5&oh=232701a84f84aabe7e503f1e4a3b921a&oe=64E5D257&_nc_sid=4f375e" alt="Emir Çeken Sigorta Logo" />
     <h1>Emir Çeken Sigorta</h1>
-    <p>Hayatınızın Her Alanında Güvenceniz Biziz!</p>
-  </header>
-  <main>
-    <section class="service">
+  </div>
+  <div class="tagline">Hayatınızın Her Alanında Güvenceniz Biziz!</div>
+</header>
+
+<main>
+
+  <section class="services" aria-label="Hizmetlerimiz">
+    <article class="service-card">
       <h2>Tarım Sigortası</h2>
       <p>Ürün, sera ve hayvan sigortaları ile üreticilerin karşılaştığı risklere karşı finansal güvence sağlıyoruz.</p>
-    </section>
-    <section class="service">
+    </article>
+    <article class="service-card">
       <h2>Seyahat Sigortası</h2>
       <p>Yurt içi ve yurt dışı seyahatlerinizde sağlık, bagaj ve iptal teminatları ile güvenli bir yolculuk deneyimi sunuyoruz.</p>
-    </section>
-    <section class="service">
+    </article>
+    <article class="service-card">
       <h2>Konut Sigortası</h2>
       <p>Ev sahiplerinin karşılaştığı risklere karşı kapsamlı teminatlar ile evinizi güvence altına alıyoruz.</p>
-    </section>
-    <section class="service">
+    </article>
+    <article class="service-card">
       <h2>Araç Sigortası</h2>
       <p>Otomobil sahiplerine kasko, trafik sigortası ve ek teminat seçenekleri ile geniş bir sigorta portföyü sunuyoruz.</p>
-    </section>
-    <a href="tel:+905551234567" class="call-button">📞 Bizi Ara: +90 555 123 45 67</a>
-  </main>
-  <footer>
-    <p>&copy; 2025 Emir Çeken Sigorta - Tüm Hakları Saklıdır.</p>
-    <div class="social-links">
-      <a href="https://www.instagram.com/emircekensigorta/" target="_blank">Instagram</a>
-      <a href="https://www.facebook.com/emircekensigorta" target="_blank">Facebook</a>
-      <a href="https://twitter.com/emircekensigorta" target="_blank">Twitter</a>
-    </div>
-  </footer>
-</body>
-</html>
+    </article>
+  </section>
 
+  <a href="tel:+905551234567" class="call-button" aria-label="Bizi Ara">📞 Bizi Ara: +90 555 123 45 67</a>
+
+  <section class="gallery" aria-label="Instagram Görselleri">
+    <img src="https://instagram.fist4-1.fna.fbcdn.net/v/t51.2885-15/e35/128063886_106843281237944_5166935127858365698_n.jpg?_nc_ht=instagram.fist4-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=6xqX3WMrIkgAX8dQyQh&edm=AP_V10EBAAAA&ccb=7-5&ig_cache_key=MjI2MDE3Mjk1MTQxNjIxOTQwNg%3D%3D.2-ccb7-5&oh=67743c465214fc5a9678b5c737326a6d&oe=64E4483A&_nc_sid=4f375e" alt="Sigorta Instagram Görsel 1" />
+    <img src="https://instagram.fist4-1.fna.fbcdn.net/v/t51.2885-15/e35/136358896_168989055029641_3812621091348015364_n.jpg?_nc_ht=instagram.fist4-1.fna.fbcdn.net&_nc_cat=107&_nc_ohc=lTlhkLfKvO4AX_12sLC&edm=AP_V10EBAAAA&ccb=7-5&ig_cache_key=MjM0ODQ2NjM1NDA4MjQ5NzgxNA%3D%
